@@ -1,0 +1,4 @@
+com/kvstore/client/KeyValueClient.class
+com/kvstore/client/ConsistentHashRing.class
+com/kvstore/client/CacheNode.class
+com/kvstore/client/NodeManager.class
