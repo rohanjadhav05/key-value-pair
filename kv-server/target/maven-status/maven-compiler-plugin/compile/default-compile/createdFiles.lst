@@ -1,0 +1,3 @@
+com/kvstore/server/config/CacheConfig.class
+com/kvstore/server/web/CacheController.class
+com/kvstore/server/KvServerApplication.class
