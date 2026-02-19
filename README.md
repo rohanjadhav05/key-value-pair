@@ -226,14 +226,45 @@ Keys will later be **sharded across these nodes** using the client’s consisten
 
 ## Using the Java Client (KeyValueClient)
 
-Add a dependency on `kv-client` (if using from another Maven project):
+To use `kv-client` as a Maven dependency from another project (published to GitHub Packages):
+
+### Step 1: Add the GitHub Packages repository
+
+In your project's `pom.xml`:
+
+```xml
+<repositories>
+  <repository>
+    <id>github</id>
+    <url>https://maven.pkg.github.com/rohanjadhav05/key-value-pair</url>
+  </repository>
+</repositories>
+```
+
+### Step 2: Add the dependency
 
 ```xml
 <dependency>
-    <groupId>com.kvstore</groupId>
-    <artifactId>kv-client</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+  <groupId>com.kvstore</groupId>
+  <artifactId>kv-client</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
 </dependency>
+```
+
+### Step 3: Configure credentials
+
+Ensure `~/.m2/settings.xml` has a `<server>` entry with the same `<id>github</id>`, using a GitHub PAT with at least `read:packages`:
+
+```xml
+<settings>
+  <servers>
+    <server>
+      <id>github</id>
+      <username>YOUR_GITHUB_USERNAME</username>
+      <password>YOUR_GITHUB_PAT</password>
+    </server>
+  </servers>
+</settings>
 ```
 
 Basic usage:
